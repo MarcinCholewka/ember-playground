@@ -1,0 +1,9 @@
+<div class="counter">
+  <span class="count {{if this.isRed 'red' }}">Count: {{this.count}}</span>
+  <button type=button class='increment-button' disabled={{this.isIncrementDisabled}} {{on 'click' this.increment}}>
+    Increment
+  </button>
+  <button type=button class='decrement-button' {{on 'click' this.decrement}}>
+    Decrement
+  </button>
+</div>
