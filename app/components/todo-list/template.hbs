@@ -1,0 +1,13 @@
+<ul>
+  {{#each @todos as |todo|}}
+  <li>
+    <span>{{todo.title}}</span>
+    <input type="checkbox" name="isDone" checked={{todo.isDone}} {{on 'click' (fn this.finishTodo todo)}} />
+  </li>
+  {{/each}}
+</ul>
+
+<form {{on 'submit' this.addNewTodo}}>
+  <input type="text" name="add-new-todo" value={{this.newTodoTitle}} {{on 'input' this.updateNewTodo}} />
+  <button type='submit'>Add</button>
+</form>
